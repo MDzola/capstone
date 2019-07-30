@@ -1,0 +1,195 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John",
+      "email": "john@hotmail.com",
+      "password": "john"
+    },
+    {
+      "id": 2,
+      "name": "Peter",
+      "email": "peter@hotmail.com",
+      "password": "peter"
+    },
+    {
+      "id": 3,
+      "name": "Amanda",
+      "email": "amanda@hotmail.com",
+      "password": "amanda"
+    },
+    {
+      "id": 4,
+      "name": "Stephen",
+      "email": "stephen@hotmail.com",
+      "password": "stephen"
+    },
+    {
+      "id": 5,
+      "name": "Blake",
+      "email": "blake@hotmail.com",
+      "password": "blake"
+    },
+    {
+      "id": 6,
+      "name": "Mary",
+      "email": "mary@hotmail.com",
+      "password": "mary"
+    },
+    {
+      "name": "Michael",
+      "email": "michael@hotmail.com",
+      "password": "admin",
+      "id": 7
+    }
+  ],
+  "priority": [
+    {
+      "id": 1,
+      "level": 1
+    },
+    {
+      "id": 2,
+      "level": 2
+    },
+    {
+      "id": 3,
+      "level": 3
+    },
+    {
+      "id": 4,
+      "level": 4
+    },
+    {
+      "id": 5,
+      "level": 5
+    }
+  ],
+  "chemicals": [
+    {
+      "id": 1,
+      "name": "Bleach",
+      "img": "http:www.image.com",
+      "sdsUrl": "http:www.image.com"
+    },
+    {
+      "id": 2,
+      "name": "Comet",
+      "img": "http:www.image.com",
+      "sdsUrl": "http:www.image.com"
+    },
+    {
+      "id": 3,
+      "name": "Simple Green",
+      "img": "http:www.image.com",
+      "sdsUrl": "http:www.image.com"
+    },
+    {
+      "id": 4,
+      "name": "Pinesol",
+      "img": "http:www.image.com",
+      "sdsUrl": "http:www.image.com"
+    },
+    {
+      "id": 5,
+      "name": "Urinal Cake",
+      "img": "http:www.image.com",
+      "sdsUrl": "http:www.image.com"
+    }
+  ],
+  "tools": [
+    {
+      "id": 1,
+      "name": "mop",
+      "img": "http:www.image.com"
+    },
+    {
+      "id": 2,
+      "name": "mop-bucket with wringer",
+      "img": "http:www.image.com"
+    },
+    {
+      "id": 3,
+      "name": "scrub-brush",
+      "img": "http:www.image.com"
+    },
+    {
+      "id": 4,
+      "name": "squeegee",
+      "img": "http:www.image.com"
+    },
+    {
+      "id": 5,
+      "name": "cotton towels",
+      "img": "http:www.image.com"
+    },
+    {
+      "id": 6,
+      "name": "scrub-pads",
+      "img": "http:www.image.com"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "downstairs Men's bathroom",
+      "zone": "A"
+    },
+    {
+      "id": 2,
+      "name": "downstairs Women's bathroom",
+      "zone": "A"
+    },
+    {
+      "id": 3,
+      "name": "upstairs office Men's bathroom",
+      "zone": "B"
+    },
+    {
+      "id": 4,
+      "name": "upstairs office Womens's bathroom",
+      "zone": "B"
+    },
+    {
+      "id": 5,
+      "name": "Prep Room Entrance Room",
+      "zone": "D"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "taskCreatorId": 1,
+      "taskName": "Mop Floor",
+      "details": "",
+      "locationId": 1,
+      "priorityId": 2
+    }
+  ],
+  "assignTask": [
+    {
+      "id": "",
+      "taskId": "",
+      "taskAssignerId": "",
+      "userId": "",
+      "priorityId": "",
+      "dateToComplete": "12/12/2019",
+      "timeStampCreated": 123123123,
+      "timeStampFinish": null
+    }
+  ],
+  "taskTool": [
+    {
+      "id": 2,
+      "toolId": 1,
+      "taskId": 2
+    }
+  ],
+  "taskChemical": [
+    {
+      "id": 1,
+      "chemicalId": 1,
+      "taskId": 2
+    }
+  ]
+}
