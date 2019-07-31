@@ -161,35 +161,76 @@
       "id": 1,
       "taskCreatorId": 1,
       "taskName": "Mop Floor",
-      "details": "",
-      "locationId": 1,
-      "priorityId": 2
+      "details": "First, you create a bleach solution and fill the mop bucket",
+      "locationId": 1
+    },
+    {
+      "id": 2,
+      "taskName": "Scrub Walls",
+      "taskCreator": 7,
+      "locationId": 2,
+      "details": "blah blah blah"
     }
   ],
   "assignTask": [
     {
-      "id": "",
-      "taskId": "",
-      "taskAssignerId": "",
-      "userId": "",
-      "priorityId": "",
-      "dateToComplete": "12/12/2019",
-      "timeStampCreated": 123123123,
-      "timeStampFinish": null
+      "taskId": 1,
+      "userId": 5,
+      "isCompleted": false,
+      "id": 1
+    },
+    {
+      "taskId": 1,
+      "userId": 3,
+      "isCompleted": false,
+      "id": 2
+    },
+    {
+      "taskId": 1,
+      "userId": 5,
+      "isCompleted": false,
+      "id": 3
+    },
+    {
+      "taskId": 1,
+      "userId": 3,
+      "isCompleted": false,
+      "id": 4
+    },
+    {
+      "taskId": 2,
+      "userId": 6,
+      "isCompleted": false,
+      "id": 5
     }
   ],
-  "taskTool": [
+  "taskTools": [
     {
-      "id": 2,
       "toolId": 1,
-      "taskId": 2
+      "taskId": 2,
+      "id": 1
+    },
+    {
+      "toolId": 3,
+      "taskId": 2,
+      "id": 2
+    },
+    {
+      "toolId": 5,
+      "taskId": 2,
+      "id": 3
     }
   ],
-  "taskChemical": [
+  "taskChemicals": [
     {
-      "id": 1,
-      "chemicalId": 1,
-      "taskId": 2
+      "chemicalId": 3,
+      "taskId": 2,
+      "id": 1
+    },
+    {
+      "chemicalId": 4,
+      "taskId": 2,
+      "id": 2
     }
   ]
 }

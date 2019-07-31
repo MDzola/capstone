@@ -7,14 +7,26 @@ export default class AssignTask extends Component {
     state = {
 
       taskNameId: "",
-      employeeId: "",
-      priority: ""
+      taskId: "",
+      taskDetails: "",
+      priorityId: "",
+      locationId: ""
     }
+
+
 
 
     handleFieldChange = evt => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
+        if (evt.target.id === "taskId") {const matchedTask = this.props.tasks.find(task =>
+            task.id === parseInt(evt.target.value)
+            )
+            console.log(matchedTask)
+            stateToChange.taskDetails = matchedTask.details
+            stateToChange.priorityId = matchedTask.priorityId
+            stateToChange.taskId = matchedTask.id
+        }
         this.setState(stateToChange)
     }
 
@@ -25,15 +37,18 @@ export default class AssignTask extends Component {
     //     window.alert("Please select an animal");
     //   }
        {
-        const newTask = {
+        const assignTask = {
           name: this.state.taskName,
+          taskId: this.state.taskId,
           priority: this.state.priority,
           userId: parseInt(this.state.userId),
+          isCompleted: false
         };
 
-    this.props.createNewTask(newTask)
+    this.props.assignTask(assignTask)
     .then(() => this.props.history.push("/dashboard"))
     }
+    console.log(this.props.assignTask)
   }
 
 
@@ -44,20 +59,32 @@ export default class AssignTask extends Component {
         <React.Fragment>
             <form className="taskForm">
           <div className="form-group">
-              <label htmlFor="assignPriority">Pick a Task</label>
+              <label htmlFor="pickATask">Pick a Task</label>
               <select
-                name="assignPriority"
-                id="taskNameId"
+                name="pickATask"
+                id="taskId"
                 onChange={this.handleFieldChange}
-                value = {this.state.taskNameId}
+                value = {this.state.taskId}
               >
                 <option value="">Select a Task</option>
-                {this.props.tasks.map(e => (
-                  <option key={e.id} id={e.id} value={e.id}>
-                    {e.taskName}
+                {this.props.tasks.map(task => (
+                  <option key={task.id} id={task.id} value={task.id}>
+                    {task.taskName}
                   </option>
                 ))}
               </select>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="taskName">Task Details</label>
+              <input
+                type="textarea"
+                required
+                className="form-control"
+                onChange={this.handleFieldChange}
+                id="taskDetails"
+                value = {this.state.taskDetails}
+              />
             </div>
                <div className="form-group">
               <label htmlFor="assignPriority">Assign a Priority Level</label>

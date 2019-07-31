@@ -6,6 +6,13 @@ export default Object.create(null, {
       return fetch(`${remoteURL}/${resource}/${id}`).then(data => data.json());
     }
   },
+
+  getToolList:{
+    value: function(resource, taskId) {
+      return fetch(`${remoteURL}/${resource}?taskId=${taskId}`)
+    }
+  },
+
   getAll: {
     value: function(resource) {
       return fetch(`${remoteURL}/${resource}`).then(data => data.json());
@@ -19,21 +26,23 @@ export default Object.create(null, {
       );
     }
   },
+
+  getAllExpandTask: {
+    value: function(resource, expandResource1, expandResource2) {
+      return fetch(`${remoteURL}/${resource}?_expand=${expandResource1}&_expand=${expandResource2}`).then(
+        data => data.json()
+      );
+    }
+  },
+
   getSorted: {
     value: function(resource, userId) {
       return fetch(`${remoteURL}/${resource}?userId=${userId}`).then(data => data.json())
     }
   },
-    getAllNews : {
-        value: function (resource) {
-            return fetch(`${remoteURL}/${resource}?_sort=timeStamp`).then(data => data.json())
-        }
-    },
-
 
   delete: {
     value: function(resource, id) {
-      console.log("id", id);
       return fetch(`${remoteURL}/${resource}/${id}`, {
         method: "DELETE",
         headers: {
