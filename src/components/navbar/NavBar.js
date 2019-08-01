@@ -10,7 +10,7 @@ class NavBar extends Component {
             <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
                 <ul className="nav nav-pills nav-fill">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/overview">Dashboard</Link>
+                        <Link className="nav-link" to="/dashboard">Dashboard</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/tasks">Create Task</Link>
@@ -20,6 +20,15 @@ class NavBar extends Component {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/completed">Completed Tasks</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/myTools">My Tools</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/myChemicals">My Chemicals</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/myTasks">Pre-made Tasks</Link>
                     </li>
                 </ul>
                 <Link className="btn btn-primary btn-sm" onClick={() => sessionStorage.clear()} to="/">Logout</Link>

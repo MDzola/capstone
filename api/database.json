@@ -43,7 +43,7 @@
       "id": 7
     }
   ],
-  "priority": [
+  "priorities": [
     {
       "id": 1,
       "level": 1
@@ -159,37 +159,66 @@
   "tasks": [
     {
       "id": 1,
-      "taskCreatorId": 1,
-      "taskName": "Mop Floor",
-      "details": "",
-      "locationId": 1,
-      "priorityId": 2
-    }
-  ],
-  "assignTask": [
-    {
-      "id": "",
-      "taskId": "",
-      "taskAssignerId": "",
-      "userId": "",
-      "priorityId": "",
-      "dateToComplete": "12/12/2019",
-      "timeStampCreated": 123123123,
-      "timeStampFinish": null
-    }
-  ],
-  "taskTool": [
+      "taskName": "Sweep",
+      "taskCreator": 7,
+      "details": "wash sinks out with water and use a bleach solution  and scrub sink and re-rinse with fresh water"
+    },
     {
       "id": 2,
-      "toolId": 1,
-      "taskId": 2
+      "taskName": "Sweep",
+      "taskCreator": 7,
+      "details": "First, you create a bleach solution and fill the mop bucket"
+    },
+    {
+      "id": 3,
+      "taskName": "Mop the floors",
+      "taskCreator": 7,
+      "details": "make slution, mop , do stuff"
     }
   ],
-  "taskChemical": [
+  "assignTask": [],
+  "taskTools": [
     {
-      "id": 1,
-      "chemicalId": 1,
-      "taskId": 2
+      "toolId": 3,
+      "taskId": 1,
+      "id": 1
+    },
+    {
+      "toolId": 3,
+      "taskId": 2,
+      "id": 2
+    },
+    {
+      "toolId": 1,
+      "taskId": 3,
+      "id": 3
+    },
+    {
+      "toolId": 2,
+      "taskId": 3,
+      "id": 4
+    }
+  ],
+  "taskChemicals": [
+    {
+      "chemicalId": 3,
+      "taskId": 1,
+      "id": 1
+    },
+    {
+      "chemicalId": 2,
+      "taskId": 2,
+      "id": 2
+    },
+    {
+      "chemicalId": 2,
+      "taskId": 3,
+      "id": 3
+    },
+    {
+      "chemicalId": 4,
+      "taskId": 3,
+      "id": 4
     }
   ]
 }
