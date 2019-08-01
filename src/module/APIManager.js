@@ -7,6 +7,12 @@ export default Object.create(null, {
     }
   },
 
+  getExpand: {
+    value: function(resource, id, expandResource1, expandResource2, expandResource3, expandResource4) {
+      return fetch(`${remoteURL}/${resource}/${id}?_expand=${expandResource1}&_expand=${expandResource2}&_expand=${expandResource3}&_expand=${expandResource4}`).then(data => data.json());
+    }
+  },
+
   getToolList:{
     value: function(resource, taskId) {
       return fetch(`${remoteURL}/${resource}?taskId=${taskId}`)
@@ -28,8 +34,8 @@ export default Object.create(null, {
   },
 
   getAllExpandTask: {
-    value: function(resource, expandResource1, expandResource2) {
-      return fetch(`${remoteURL}/${resource}?_expand=${expandResource1}&_expand=${expandResource2}`).then(
+    value: function(resource, expandResource1, expandResource2, resource3, resource4) {
+      return fetch(`${remoteURL}/${resource}?_expand=${expandResource1}&_expand=${expandResource2}&_expand=${resource3}&_expand=${resource4}`).then(
         data => data.json()
       );
     }

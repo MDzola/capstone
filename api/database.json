@@ -43,7 +43,7 @@
       "id": 7
     }
   ],
-  "priority": [
+  "priorities": [
     {
       "id": 1,
       "level": 1
@@ -159,55 +159,28 @@
   "tasks": [
     {
       "id": 1,
-      "taskCreatorId": 1,
-      "taskName": "Mop Floor",
-      "details": "First, you create a bleach solution and fill the mop bucket",
-      "locationId": 1
+      "taskName": "Sweep",
+      "taskCreator": 7,
+      "details": "wash sinks out with water and use a bleach solution  and scrub sink and re-rinse with fresh water"
     },
     {
       "id": 2,
-      "taskName": "Scrub Walls",
+      "taskName": "Sweep",
       "taskCreator": 7,
-      "locationId": 2,
-      "details": "blah blah blah"
+      "details": "First, you create a bleach solution and fill the mop bucket"
+    },
+    {
+      "id": 3,
+      "taskName": "Mop the floors",
+      "taskCreator": 7,
+      "details": "make slution, mop , do stuff"
     }
   ],
-  "assignTask": [
-    {
-      "taskId": 1,
-      "userId": 5,
-      "isCompleted": false,
-      "id": 1
-    },
-    {
-      "taskId": 1,
-      "userId": 3,
-      "isCompleted": false,
-      "id": 2
-    },
-    {
-      "taskId": 1,
-      "userId": 5,
-      "isCompleted": false,
-      "id": 3
-    },
-    {
-      "taskId": 1,
-      "userId": 3,
-      "isCompleted": false,
-      "id": 4
-    },
-    {
-      "taskId": 2,
-      "userId": 6,
-      "isCompleted": false,
-      "id": 5
-    }
-  ],
+  "assignTask": [],
   "taskTools": [
     {
-      "toolId": 1,
-      "taskId": 2,
+      "toolId": 3,
+      "taskId": 1,
       "id": 1
     },
     {
@@ -216,21 +189,36 @@
       "id": 2
     },
     {
-      "toolId": 5,
-      "taskId": 2,
+      "toolId": 1,
+      "taskId": 3,
       "id": 3
+    },
+    {
+      "toolId": 2,
+      "taskId": 3,
+      "id": 4
     }
   ],
   "taskChemicals": [
     {
       "chemicalId": 3,
-      "taskId": 2,
+      "taskId": 1,
       "id": 1
     },
     {
-      "chemicalId": 4,
+      "chemicalId": 2,
       "taskId": 2,
       "id": 2
+    },
+    {
+      "chemicalId": 2,
+      "taskId": 3,
+      "id": 3
+    },
+    {
+      "chemicalId": 4,
+      "taskId": 3,
+      "id": 4
     }
   ]
 }

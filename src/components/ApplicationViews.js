@@ -7,7 +7,13 @@ import AssignTask from "./assignTask/AssignTask"
 import Login from "./login/Login"
 import Registration from "./login/Registration"
 import CurrentTaskList from "./dashboard/CurrentTaskList"
-import AssignTaskDetail from "./assignTask/AssignTaskDetail"
+import CurrentTaskDetails from "./dashboard/CurrentTaskDetails"
+import CurrentTaskEdit from "./dashboard/CurrentTaskEdit"
+import ToolList from "./tool/ToolList"
+import ChemicalList from "./chemical/ChemicalList"
+
+
+
 class ApplicationViews extends Component {
 
     state = {
@@ -20,7 +26,7 @@ class ApplicationViews extends Component {
         tools: [],
         taskTools: [],
         taskChemicals: [],
-        priority: [],
+        priorities: [],
         locations: [],
 
     }
@@ -34,12 +40,10 @@ class ApplicationViews extends Component {
         .then(users => newState.users = users)
         APIManager.getAll("locations")
         .then(locations => newState.locations = locations)
-        APIManager.getAll("priority")
-        .then(priority => newState.priority = priority)
+        APIManager.getAll("priorities")
+        .then(priorities => newState.priorities = priorities)
         APIManager.getAll("tasks")
         .then(tasks => newState.tasks = tasks)
-        APIManager.getAll("assignTask")
-        .then(assignTask => newState.assignTask = assignTask)
         APIManager.getAll("tools")
         .then(tools => newState.tools = tools)
         APIManager.getAll("chemicals")
@@ -48,7 +52,7 @@ class ApplicationViews extends Component {
         .then(taskChemicals => newState.taskChemicals = taskChemicals)
         APIManager.getAllExpand("taskTools", "tool")
         .then(taskTools => newState.taskTools = taskTools)
-        APIManager.getAllExpandTask("assignTask", "task", "user")
+        APIManager.getAllExpandTask("assignTask", "task", "user", "location", "priority")
         .then(assignTask => newState.assignTask = assignTask)
         .then (() => this.setState(newState))
     }
@@ -70,7 +74,18 @@ class ApplicationViews extends Component {
 
     assignTask = (assignTask) => {
       return APIManager.post(assignTask, "assignTask")
-      .then(() => APIManager.getAllExpandTask("assignTask", "task", "user"))
+      .then(() => APIManager.getAllExpandTask("assignTask", "task", "user", "location", "priority"))
+      .then(assignTask => {
+        this.setState({
+          assignTask: assignTask
+        })
+      })
+    }
+
+
+    editTask = (assignTask) => {
+      return APIManager.put(assignTask, "assignTask")
+      .then(() => APIManager.getAllExpandTask("assignTask", "task", "user", "location", "priority"))
       .then(assignTask => {
         this.setState({
           assignTask: assignTask
@@ -130,6 +145,15 @@ class ApplicationViews extends Component {
         this.setState({ taskTools: taskTools })
     })
 
+    deleteCurrentTask = id => APIManager.delete("assignTask", id)
+    .then(() => APIManager.getAllExpandTask("assignTask", "task", "user", "location", "priority"))
+    .then(assignTask => {
+      this.setState({ assignTask: assignTask })
+      this.props.history.push("/dashboard")
+    })
+
+
+
     render() {
       return (
         <React.Fragment>
@@ -145,12 +169,12 @@ class ApplicationViews extends Component {
 
 
           <Route exact path="/assignTask" render={props => {
-                       return <AssignTask {...props} assignTask={this.assignTask} users={this.state.users} priority={this.state.priority} locations={this.state.locations} tasks={this.state.tasks}/>
+                       return <AssignTask {...props} assignTask={this.assignTask} users={this.state.users} priorities={this.state.priorities} locations={this.state.locations} tasks={this.state.tasks}/>
                   }}
                   />
 
           <Route exact path="/tasks" render={(props) => {
-                      return <CreateTask {...props} createNewTask={this.createNewTask} users={this.state.users} priority={this.state.priority} locations={this.state.locations} tools={this.state.tools} taskTools={this.state.taskTools} addTool={this.addTool} addChemical={this.addChemical} chemicals={this.state.chemicals} taskChemicals={this.state.taskChemicals} deleteTaskChemical={this.deleteTaskChemical} deleteTaskTool={this.deleteTaskTool}/>
+                      return <CreateTask {...props} createNewTask={this.createNewTask} users={this.state.users} tools={this.state.tools} taskTools={this.state.taskTools} addTool={this.addTool} addChemical={this.addChemical} chemicals={this.state.chemicals} taskChemicals={this.state.taskChemicals} deleteTaskChemical={this.deleteTaskChemical} deleteTaskTool={this.deleteTaskTool}/>
                   }}
                   />
 
@@ -167,20 +191,33 @@ class ApplicationViews extends Component {
             }}
           />
 
+
+          <Route exact path="/myTools" render={props => {
+               return <ToolList {...props} tools={this.state.tools} />
+
+            }}
+          />
+
+           <Route exact path="/myChemicals" render={props => {
+               return <ChemicalList {...props} chemicals={this.state.chemicals} />
+
+            }}
+          />
+
           <Route exact path="/register" render={props => {
             return <Registration {...props} addUser={this.addUser} users={this.state.users} />;
           }}
         />
 
           <Route exact path="/assignTask/:assignTaskId(\d+)" render={(props) => {
-                    let task = this.state.assignTask.find(task =>
-                        task.id === parseInt(props.match.params.taskId)
-                    )
-                    if (!task) {
-                        task = {id:404, name:"404", breed:"Dog not found"}
-                    }
-                    return <AssignTaskDetail task={ task } />
-                }} />
+            return <CurrentTaskDetails assignTask={this.state.assignTask} deleteCurrentTask={this.deleteCurrentTask} {...props} />
+          }}
+         />
+
+          <Route path="/assignTask/:assignTaskId(\d+)/edit" render={(props) => {
+            return <CurrentTaskEdit assignTask={this.state.assignTask} editTask={this.editTask} deleteCurrentTask={this.deleteCurrentTask} priorities={this.state.priorities} users={this.state.users} locations={this.state.locations} {...props} />
+          }}
+         />
         </React.Fragment>
       );
     }

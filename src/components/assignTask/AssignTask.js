@@ -9,6 +9,7 @@ export default class AssignTask extends Component {
       taskNameId: "",
       taskId: "",
       taskDetails: "",
+      location: "",
       priorityId: "",
       locationId: ""
     }
@@ -24,7 +25,6 @@ export default class AssignTask extends Component {
             )
             console.log(matchedTask)
             stateToChange.taskDetails = matchedTask.details
-            stateToChange.priorityId = matchedTask.priorityId
             stateToChange.taskId = matchedTask.id
         }
         this.setState(stateToChange)
@@ -33,16 +33,14 @@ export default class AssignTask extends Component {
     newTask = evt => {
       evt.preventDefault()
 
-    //   if (this.state.animalId === "" || this.state.animalId === null) {
-    //     window.alert("Please select an animal");
-    //   }
        {
         const assignTask = {
           name: this.state.taskName,
           taskId: this.state.taskId,
-          priority: this.state.priority,
+          priorityId: parseInt(this.state.priorityId),
           userId: parseInt(this.state.userId),
-          isCompleted: false
+          isCompleted: false,
+          locationId: parseInt(this.state.locationId)
         };
 
     this.props.assignTask(assignTask)
@@ -95,13 +93,29 @@ export default class AssignTask extends Component {
                 value = {this.state.priorityId}
               >
                 <option value="">Select a Priority Level</option>
-                {this.props.priority.map(e => (
+                {this.props.priorities.map(e => (
                   <option key={e.id} id={e.id} value={e.id}>
                     {e.level}
                   </option>
                 ))}
               </select>
             </div>
+            <div className="form-group">
+            <label htmlFor="location">Assign to a Location</label>
+            <select
+              defaultValue=""
+              name="location"
+              id="locationId"
+              onChange={this.handleFieldChange}
+            >
+              <option value="">Select a Location</option>
+              {this.props.locations.map(e => (
+                <option key={e.id} id={e.id} value={e.id}>
+                  {e.name}
+                </option>
+              ))}
+            </select>
+          </div>
             <div className="form-group">
               <label htmlFor="assignEmployee">Assign an Employee for Task</label>
               <select

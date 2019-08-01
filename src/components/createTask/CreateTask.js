@@ -9,7 +9,6 @@ export default class CreateTask extends Component {
     state = {
       taskId: "",
       taskName: "",
-      location: "",
       taskDetails: "",
       toolId: ""
     }
@@ -62,7 +61,6 @@ export default class CreateTask extends Component {
           id: this.state.taskId,
           taskName: this.state.taskName,
           taskCreator: parseInt(sessionStorage.getItem("userId")),
-          locationId: parseInt(this.state.locationId),
           details: this.state.taskDetails
         };
 
@@ -156,22 +154,6 @@ export default class CreateTask extends Component {
                 value = {this.state.taskDetails}
               />
             </div>
-            <div className="form-group">
-            <label htmlFor="location">Assign to a Location</label>
-            <select
-              defaultValue=""
-              name="location"
-              id="locationId"
-              onChange={this.handleFieldChange}
-            >
-              <option value="">Select a Location</option>
-              {this.props.locations.map(e => (
-                <option key={e.id} id={e.id} value={e.id}>
-                  {e.name}
-                </option>
-              ))}
-            </select>
-          </div>
           <div className="form-group">
             <label htmlFor="location">Pick Tool(s) for Job</label>
             <select
