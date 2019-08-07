@@ -8,12 +8,15 @@ export default class ChemicalCard extends Component {
         return (
                 <div key={this.props.taskChemical.id} className="card card--employee">
                     <div className="card-body">
+                    <h4 className="card-title">
+                            <img src={ this.props.taskChemical.chemical.img } className="icon--chemical" alt="" />
+                        </h4>
                         <div className="card-title">
                             <h5>{this.props.taskChemical.chemical.name}</h5>
                             {/* <Link className="nav-link" to={`/tools/${this.props.tool.id}`}>Details</Link> */}
-                        <a href="#"
+                        {/* <a href="#"
                             onClick={() => this.props.deleteTaskChemical(this.props.taskChemical.id)}
-                            className="card-link">Delete</a>
+                            className="card-link">Delete</a> */}
                         </div>
                     </div>
                 </div>

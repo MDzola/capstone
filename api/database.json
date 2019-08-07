@@ -41,6 +41,12 @@
       "email": "michael@hotmail.com",
       "password": "admin",
       "id": 7
+    },
+    {
+      "name": "drew",
+      "email": "drew@drew.com",
+      "password": "drew",
+      "id": 8
     }
   ],
   "priorities": [
@@ -69,30 +75,55 @@
     {
       "id": 1,
       "name": "Bleach",
-      "img": "http:www.image.com",
+      "img": "../image/39-394748_clorox-bleach-png-clorox-germicidal-bleach.png",
+      "type": "",
+      "description": "",
+      "resource": "",
+      "inventory": "",
+      "cost": 28.45,
       "sdsUrl": "http:www.image.com"
     },
     {
       "id": 2,
       "name": "Comet",
-      "img": "http:www.image.com",
+      "img": "../image/comet.jpg",
+      "type": "",
+      "description": "",
+      "resource": "",
+      "inventory": "",
+      "cost": 28.45,
       "sdsUrl": "http:www.image.com"
     },
     {
       "id": 3,
       "name": "Simple Green",
+      "type": "",
+      "description": "",
+      "resource": "",
+      "inventory": "",
+      "cost": 28.45,
       "img": "http:www.image.com",
       "sdsUrl": "http:www.image.com"
     },
     {
       "id": 4,
       "name": "Pinesol",
+      "type": "",
+      "description": "",
+      "resource": "",
+      "inventory": "",
+      "cost": 28.45,
       "img": "http:www.image.com",
       "sdsUrl": "http:www.image.com"
     },
     {
       "id": 5,
       "name": "Urinal Cake",
+      "type": "",
+      "description": "",
+      "resource": "",
+      "inventory": "",
+      "cost": 28.45,
       "img": "http:www.image.com",
       "sdsUrl": "http:www.image.com"
     }
@@ -100,32 +131,62 @@
   "tools": [
     {
       "id": 1,
-      "name": "mop",
-      "img": "http:www.image.com"
+      "name": "Mop",
+      "type": "General Purpose Cleaning",
+      "description": "Standard Industrial Mop",
+      "resource": "https://www.uline.com/BL_7002/Wet-Mops?keywords=wet+mop",
+      "inventory": 6,
+      "cost": 29,
+      "img": "../image/mop.png"
     },
     {
       "id": 2,
       "name": "mop-bucket with wringer",
-      "img": "http:www.image.com"
+      "type": "General Purpose Cleaning",
+      "description": "Industrial Mop Bucket with Wringer",
+      "resource": "https://www.uline.com/BL_7001/Wavebrake-Buckets-Wringers?keywords=mop+bucket+with+wringer",
+      "inventory": 4,
+      "cost": 81,
+      "img": "../image/mopBucketWithWringer.png"
     },
     {
       "id": 3,
       "name": "scrub-brush",
+      "type": "",
+      "description": "",
+      "resource": "",
+      "inventory": "",
+      "cost": 28.45,
       "img": "http:www.image.com"
     },
     {
       "id": 4,
       "name": "squeegee",
+      "type": "",
+      "description": "",
+      "resource": "",
+      "inventory": "",
+      "cost": 28.45,
       "img": "http:www.image.com"
     },
     {
       "id": 5,
       "name": "cotton towels",
+      "type": "",
+      "description": "",
+      "resource": "",
+      "inventory": "",
+      "cost": 28.45,
       "img": "http:www.image.com"
     },
     {
       "id": 6,
       "name": "scrub-pads",
+      "type": "",
+      "description": "",
+      "resource": "",
+      "inventory": "",
+      "cost": 28.45,
       "img": "http:www.image.com"
     }
   ],
@@ -161,64 +222,81 @@
       "id": 1,
       "taskName": "Sweep",
       "taskCreator": 7,
-      "details": "wash sinks out with water and use a bleach solution  and scrub sink and re-rinse with fresh water"
-    },
-    {
-      "id": 2,
-      "taskName": "Sweep",
-      "taskCreator": 7,
       "details": "First, you create a bleach solution and fill the mop bucket"
-    },
-    {
-      "id": 3,
-      "taskName": "Mop the floors",
-      "taskCreator": 7,
-      "details": "make slution, mop , do stuff"
     }
   ],
-  "assignTask": [],
+  "assignTask": [
+    {
+      "taskId": 1,
+      "priorityId": 3,
+      "userId": 2,
+      "isCompleted": true,
+      "locationId": 1,
+      "date": "2019-08-07T05:00:00.000Z",
+      "id": 1
+    },
+    {
+      "taskId": 1,
+      "priorityId": 4,
+      "userId": 7,
+      "isCompleted": true,
+      "locationId": 5,
+      "date": "2019-08-08T05:00:00.000Z",
+      "id": 2
+    },
+    {
+      "taskId": 1,
+      "priorityId": 4,
+      "userId": 1,
+      "isCompleted": true,
+      "locationId": 4,
+      "date": "2019-08-10T05:00:00.000Z",
+      "id": 3
+    },
+    {
+      "taskId": 1,
+      "priorityId": 2,
+      "userId": 3,
+      "isCompleted": false,
+      "locationId": 4,
+      "date": "2019-08-07T05:00:00.000Z",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "taskId": 1,
+      "priorityId": 3,
+      "locationId": 3,
+      "userId": 6,
+      "isCompleted": false
+    },
+    {
+      "taskId": 1,
+      "priorityId": 5,
+      "userId": 7,
+      "isCompleted": false,
+      "locationId": 2,
+      "date": "2019-08-07T15:17:26.697Z",
+      "id": 6
+    }
+  ],
   "taskTools": [
     {
-      "toolId": 3,
+      "toolId": 2,
       "taskId": 1,
       "id": 1
     },
     {
-      "toolId": 3,
-      "taskId": 2,
-      "id": 2
-    },
-    {
       "toolId": 1,
-      "taskId": 3,
-      "id": 3
-    },
-    {
-      "toolId": 2,
-      "taskId": 3,
-      "id": 4
+      "taskId": 1,
+      "id": 2
     }
   ],
   "taskChemicals": [
     {
-      "chemicalId": 3,
+      "chemicalId": 1,
       "taskId": 1,
       "id": 1
-    },
-    {
-      "chemicalId": 2,
-      "taskId": 2,
-      "id": 2
-    },
-    {
-      "chemicalId": 2,
-      "taskId": 3,
-      "id": 3
-    },
-    {
-      "chemicalId": 4,
-      "taskId": 3,
-      "id": 4
     }
   ]
 }

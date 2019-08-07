@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import "../assignTask/assigntask.css"
 import APIManager from "../../module/APIManager"
+import dateFormat from "dateformat"
 
 export default class CurrentTaskDetails extends Component {
 
@@ -9,7 +10,8 @@ export default class CurrentTaskDetails extends Component {
         taskName: "",
         userAssigned: "",
         location: "",
-        priority: ""
+        priority: "",
+        date: ""
       }
 
 
@@ -27,7 +29,8 @@ export default class CurrentTaskDetails extends Component {
             taskName: task.task.taskName,
             userAssigned: task.user.name,
             location: task.location.name,
-            priority: task.priority.level
+            priority: task.priority.level,
+            date: dateFormat(task.date, "dddd, mmmm dS, yyyy")
           });
         });
       }
@@ -52,6 +55,9 @@ export default class CurrentTaskDetails extends Component {
                         </div>
                         <div className="card-title">
                             <h5>Priority:{this.state.priority}</h5>
+                        </div>
+                        <div className="card-title">
+                            <h5>Date Assigned:{this.state.date}</h5>
                         </div>
 
 

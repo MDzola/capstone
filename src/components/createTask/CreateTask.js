@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import APIManager from "../../module/APIManager"
 import ToolCard from"../tool/ToolCard"
 import ChemicalCard from "../chemical/ChemicalCard"
+import "./createtask.css"
 
 
 export default class CreateTask extends Component {
@@ -147,6 +148,7 @@ export default class CreateTask extends Component {
               <label htmlFor="taskName">Task Details</label>
               <input
                 type="textarea"
+                row={10}
                 required
                 className="form-control"
                 onChange={this.handleFieldChange}
@@ -226,4 +228,6 @@ export default class CreateTask extends Component {
       );
     }
 }
+
+
 

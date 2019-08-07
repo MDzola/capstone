@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Calendar from "react-calendar"
 
 
 
@@ -11,7 +12,8 @@ export default class AssignTask extends Component {
       taskDetails: "",
       location: "",
       priorityId: "",
-      locationId: ""
+      locationId: "",
+      date: new Date()
     }
 
 
@@ -30,6 +32,8 @@ export default class AssignTask extends Component {
         this.setState(stateToChange)
     }
 
+    onChange = date => this.setState({ date })
+
     newTask = evt => {
       evt.preventDefault()
 
@@ -40,7 +44,8 @@ export default class AssignTask extends Component {
           priorityId: parseInt(this.state.priorityId),
           userId: parseInt(this.state.userId),
           isCompleted: false,
-          locationId: parseInt(this.state.locationId)
+          locationId: parseInt(this.state.locationId),
+          date: this.state.date
         };
 
     this.props.assignTask(assignTask)
@@ -131,6 +136,13 @@ export default class AssignTask extends Component {
                   </option>
                 ))}
               </select>
+            </div>
+            <div>
+              <div><h4>Assign a date to complete</h4></div>
+              <Calendar
+                onChange={this.onChange}
+                value={this.state.date}
+              />
             </div>
             <button
               type="submit"

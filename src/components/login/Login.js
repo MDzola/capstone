@@ -4,34 +4,32 @@ import APIManager from "../../module/APIManager";
 
 export default class Login extends Component {
 
-    // Set initial state
+
     state = {
         email: "",
         password: ""
     }
 
-    // Update state whenever an input field is edited
+
     handleFieldChange = (evt) => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
 
-    // Simplistic handler for login submit
-    handleLogin = (e) => {
-        e.preventDefault()
+
+    handleLogin = (evt) => {
+        evt.preventDefault()
         APIManager.getAll("users").then(users => {
-            const userLoggedIn = users.find(
-                element =>
-                element.email.toLowerCase() === this.state.email.toLowerCase() &&
-                element.password.toLowerCase() === this.state.password.toLowerCase()
+            const userLoggedIn = users.find( thisUser =>
+                thisUser.email.toLowerCase() === this.state.email.toLowerCase() && thisUser.password.toLowerCase() === this.state.password.toLowerCase()
             );
             if (userLoggedIn) {
                 sessionStorage.setItem("userId", userLoggedIn.id);
                 this.props.history.push("/dashboard");
             }
             else {
-                window.alert("Invalid login information. Please try again or register a new account.")
+                window.alert("Login Information does not match, please try again or Register a new Account")
             }
         }
     )}

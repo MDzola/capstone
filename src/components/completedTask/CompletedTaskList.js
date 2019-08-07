@@ -5,7 +5,7 @@ import CurrentTaskCard from "../dashboard/CurrentTaskCard"
 
 
 
-export default class CurrentTaskList extends Component {
+export default class CompletedTaskList extends Component {
     render () {
         return (
             <React.Fragment>
@@ -13,11 +13,11 @@ export default class CurrentTaskList extends Component {
                             <img src={ "../image/carousel-img-3.jpg" } className="icon--header" alt="" />
                         </h4>
             <section className="assignTask">
-                <h2>Assigned Tasks to be Completed:</h2>
+                <h2>Completed Tasks:</h2>
             {
 
                 this.props.assignTask
-                .filter(task => task.isCompleted === false)
+                .filter(task => task.isCompleted === true)
                 .map(task =>
                  <CurrentTaskCard key={task.id} task={task} {...this.props} />
                  )

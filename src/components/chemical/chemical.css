@@ -1,0 +1,47 @@
+.chemical {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icon--chemical {
+    width: 200px;
+    height: 200px;
+}
+
+.icon--chemicalList {
+    width: 150px;
+    height: 150px;
+}
+
+
+.card {
+    width: 20rem;
+}
+
+.cardList {
+    width: 10rem;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.card-link {
+    margin: 12px 0 0 0;
+    font-size: 0.7em;
+}
+
+.ownerList {
+    font-size: 0.75em;
+}
+
+.employeeButton {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 0 10px 0;
+  }
+
