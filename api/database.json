@@ -145,7 +145,7 @@
       "type": "General Purpose Cleaning",
       "description": "Industrial Mop Bucket with Wringer",
       "resource": "https://www.uline.com/BL_7001/Wavebrake-Buckets-Wringers?keywords=mop+bucket+with+wringer",
-      "inventory": 4,
+      "inventory": 5,
       "cost": 81,
       "img": "../image/mopBucketWithWringer.png"
     },
@@ -274,10 +274,19 @@
       "taskId": 1,
       "priorityId": 5,
       "userId": 7,
-      "isCompleted": false,
+      "isCompleted": true,
       "locationId": 2,
       "date": "2019-08-07T15:17:26.697Z",
       "id": 6
+    },
+    {
+      "taskId": 1,
+      "priorityId": 3,
+      "userId": 3,
+      "isCompleted": false,
+      "locationId": 3,
+      "date": "2019-08-15T05:00:00.000Z",
+      "id": 7
     }
   ],
   "taskTools": [

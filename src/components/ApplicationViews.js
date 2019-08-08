@@ -17,7 +17,6 @@ import ChemicalList from "./chemical/ChemicalList"
 import ChemicalEdit from "./chemical/ChemicalEdit"
 import TaskList from "./task/TaskList"
 import TaskDetails from "./task/TaskDetails"
-import CardFlip from "./dashboard/CardFlip"
 import CompletedTaskList from "./completedTask/CompletedTaskList"
 
 
@@ -273,14 +272,6 @@ class ApplicationViews extends Component {
           <Route
             exact path="/completed" render={props => {
               return  <CompletedTaskList {...props} assignTask={this.state.assignTask} />
-
-            }}
-            />
-
-
-              <Route
-            exact path="/cardflip" render={props => {
-              return  <CardFlip {...props} />
 
             }}
             />

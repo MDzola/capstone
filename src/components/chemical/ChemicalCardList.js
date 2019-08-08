@@ -6,7 +6,7 @@ import "../chemical/chemical.css"
 export default class ChemicalCardList extends Component {
     render() {
         return (
-                <div key={this.props.chemical.id} className="card chemical">
+                <div className="card chemical">
                     <div className="card-body">
                     <h4 className="card-title">
                             <img src={ this.props.chemical.img } className="icon--chemicalList" alt="" />
