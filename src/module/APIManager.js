@@ -35,7 +35,7 @@ export default Object.create(null, {
 
   getAllExpandTask: {
     value: function(resource, expandResource1, expandResource2, resource3, resource4) {
-      return fetch(`${remoteURL}/${resource}?_expand=${expandResource1}&_expand=${expandResource2}&_expand=${resource3}&_expand=${resource4}`).then(
+      return fetch(`${remoteURL}/${resource}?_expand=${expandResource1}&_expand=${expandResource2}&_expand=${resource3}&_expand=${resource4}&_sort=priorityId&_order=desc`).then(
         data => data.json()
       );
     }

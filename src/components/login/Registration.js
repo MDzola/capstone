@@ -17,11 +17,11 @@ export default class Registration extends Component {
     handleRegister = event => {
         event.preventDefault()
         APIManager.getAll("users").then((users) => {
-            let isMatch = users.find(user => user.email.toLowerCase() === this.state.email.toLowerCase())
-            if(isMatch){
-                window.alert("This email already exists! Please go back to login page.")
+            let emailCheck = users.find(user => user.email.toLowerCase() === this.state.email.toLowerCase())
+            if(emailCheck){
+                alert("This email already exists! Please go back to login page.")
             } else if(this.state.name === "" || this.state.email === "" || this.state.password === ""){
-                window.alert("Please fill out all fields to Register")
+                alert("Please fill out all fields to Register a new account!")
             } else {
             let newUser = {
                 name: this.state.name,

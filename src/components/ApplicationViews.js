@@ -10,11 +10,18 @@ import CurrentTaskList from "./dashboard/CurrentTaskList"
 import CurrentTaskDetails from "./dashboard/CurrentTaskDetails"
 import CurrentTaskEdit from "./dashboard/CurrentTaskEdit"
 import ToolList from "./tool/ToolList"
+import ToolDetails from "./tool/ToolDetails"
+import ToolEdit from "./tool/ToolEdit"
+import ChemicalDetails from "./chemical/ChemicalDetails"
 import ChemicalList from "./chemical/ChemicalList"
-
+import ChemicalEdit from "./chemical/ChemicalEdit"
+import TaskList from "./task/TaskList"
+import TaskDetails from "./task/TaskDetails"
+import CompletedTaskList from "./completedTask/CompletedTaskList"
 
 
 class ApplicationViews extends Component {
+  isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
     state = {
         users: [],
@@ -93,7 +100,35 @@ class ApplicationViews extends Component {
       })
     }
 
+    completeTask = (completedTask) => {
+      return APIManager.patch(completedTask, "assignTask")
+      .then(() => APIManager.getAllExpandTask("assignTask", "task", "user", "location", "priority"))
+      .then(assignTask => {
+        this.setState({
+          assignTask: assignTask
+        })
+      })
+    }
 
+    editTool = (updateTool) => {
+      return APIManager.put(updateTool, "tools")
+      .then(() => APIManager.getAll("tools"))
+      .then(tools => {
+        this.setState({
+          tools: tools
+        })
+      })
+    }
+
+    editChemical = (updateChemical) => {
+      return APIManager.put(updateChemical, "chemicals")
+      .then(() => APIManager.getAll("chemicals"))
+      .then(chemicals => {
+        this.setState({
+          chemicals: chemicals
+        })
+      })
+    }
 
 
     addTool = tool => {
@@ -163,10 +198,19 @@ class ApplicationViews extends Component {
         />
 
         <Route exact path="/dashboard" render={props => {
-                    return <CurrentTaskList assignTask={this.state.assignTask} {...props} />;
+                    return <CurrentTaskList assignTask={this.state.assignTask} completeTask={this.completeTask} {...props} />;
                   }}
                 />
 
+          <Route exact path="/assignTask/:assignTaskId(\d+)" render={(props) => {
+            return <CurrentTaskDetails assignTask={this.state.assignTask} deleteCurrentTask={this.deleteCurrentTask} {...props} />
+          }}
+          />
+
+          <Route path="/assignTask/:assignTaskId(\d+)/edit" render={(props) => {
+            return <CurrentTaskEdit assignTask={this.state.assignTask} editTask={this.editTask} deleteCurrentTask={this.deleteCurrentTask} priorities={this.state.priorities} users={this.state.users} locations={this.state.locations} {...props} />
+          }}
+          />
 
           <Route exact path="/assignTask" render={props => {
                        return <AssignTask {...props} assignTask={this.assignTask} users={this.state.users} priorities={this.state.priorities} locations={this.state.locations} tasks={this.state.tasks}/>
@@ -178,12 +222,60 @@ class ApplicationViews extends Component {
                   }}
                   />
 
+
+        <Route exact path="/mytasks" render={(props) => {
+                       return <TaskList {...props} tasks={this.state.tasks}/>
+                   }}
+                  />
+
+        <Route path="/mytasks/:taskId(\d+)" render={(props) => {
+                       return <TaskDetails {...props} tasks={this.state.tasks} taskTools={this.state.taskTools} taskChemicals={this.state.taskChemicals}/>
+                        }}
+                        />
+
+          <Route exact path="/myTools" render={props => {
+              return <ToolList {...props} tools={this.state.tools} />
+
+            }}
+          />
+
+          <Route exact path="/myTools/:toolId(\d+)" render={props => {
+                return <ToolDetails {...props} tools={this.state.tools} taskTools={this.state.taskTools}/>
+
+              }}
+            />
+
+          <Route path="/myTools/:toolId(\d+)/edit" render={props => {
+                return <ToolEdit {...props} tools={this.state.tools} editTool={this.editTool}/>
+
+              }}
+            />
+
+          <Route exact path="/myChemicals" render={props => {
+              return <ChemicalList {...props} chemicals={this.state.chemicals} />
+
+            }}
+          />
+
+            <Route exact path="/myChemicals/:chemicalId(\d+)" render={props => {
+              return <ChemicalDetails {...props} chemicals={this.state.chemicals} />
+
+            }}
+          />
+
+            <Route path="/myChemicals/:chemicalId(\d+)/edit" render={props => {
+              return <ChemicalEdit {...props} chemicals={this.state.chemicals} editChemical={this.editChemical} />
+
+            }}
+          />
+
           <Route
             exact path="/completed" render={props => {
-            //   return  <TaskForm {...props} />
+              return  <CompletedTaskList {...props} assignTask={this.state.assignTask} />
 
             }}
             />
+
 
           <Route exact path="/" render={props => {
                return <Login {...props} users={this.state.users} />
@@ -192,32 +284,12 @@ class ApplicationViews extends Component {
           />
 
 
-          <Route exact path="/myTools" render={props => {
-               return <ToolList {...props} tools={this.state.tools} />
-
-            }}
-          />
-
-           <Route exact path="/myChemicals" render={props => {
-               return <ChemicalList {...props} chemicals={this.state.chemicals} />
-
-            }}
-          />
 
           <Route exact path="/register" render={props => {
             return <Registration {...props} addUser={this.addUser} users={this.state.users} />;
           }}
         />
 
-          <Route exact path="/assignTask/:assignTaskId(\d+)" render={(props) => {
-            return <CurrentTaskDetails assignTask={this.state.assignTask} deleteCurrentTask={this.deleteCurrentTask} {...props} />
-          }}
-         />
-
-          <Route path="/assignTask/:assignTaskId(\d+)/edit" render={(props) => {
-            return <CurrentTaskEdit assignTask={this.state.assignTask} editTask={this.editTask} deleteCurrentTask={this.deleteCurrentTask} priorities={this.state.priorities} users={this.state.users} locations={this.state.locations} {...props} />
-          }}
-         />
         </React.Fragment>
       );
     }
