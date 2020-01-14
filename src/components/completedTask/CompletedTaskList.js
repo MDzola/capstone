@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "../dashboard/dashboard.css"
-import CurrentTaskCard from "../dashboard/CurrentTaskCard"
+import CompletedTaskCard from "../completedTask/CompletedTaskCard"
 
 
 
@@ -19,7 +19,7 @@ export default class CompletedTaskList extends Component {
                 this.props.assignTask
                 .filter(task => task.isCompleted === true)
                 .map(task =>
-                 <CurrentTaskCard key={task.id} task={task} {...this.props} />
+                 <CompletedTaskCard key={task.id} task={task} {...this.props} />
                  )
             }
             </section>

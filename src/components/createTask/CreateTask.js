@@ -120,20 +120,20 @@ export default class CreateTask extends Component {
       return (
         <React.Fragment>
             <div>
-                <h3>Step One, click on Create Task</h3>
+                <h3 className="Guide">Step One, click on Create Task</h3>
             </div>
             <button
               type="submit"
               onClick={this.newTaskStepOne}
-              className="btn btn-primary"
+              className="btn btn-primary btn-lg"
             >
               Create Task
             </button>
-            <div>
+            <div className="Guide">
                 <h3>Step Two, fill out Task Parameters</h3>
             </div>
           <form className="taskForm">
-            <div className="form-group">
+            <div className="form-group col">
               <label htmlFor="taskName">Task Name</label>
               <input
                 type="text"
@@ -144,7 +144,7 @@ export default class CreateTask extends Component {
                 value = {this.state.taskName}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group col">
               <label htmlFor="taskName">Task Details</label>
               <input
                 type="textarea"
@@ -205,7 +205,7 @@ export default class CreateTask extends Component {
             <button
               type="submit"
               onClick={this.addChemical}
-              className="btn btn-primary"
+              className="btn btn-danger"
             >
               Add a Chemical
             </button>

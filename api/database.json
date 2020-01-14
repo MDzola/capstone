@@ -157,7 +157,7 @@
       "resource": "",
       "inventory": "",
       "cost": 28.45,
-      "img": "http:www.image.com"
+      "img": "../image/399-3997751_this-style-is-available-in-three-grades-of.png"
     },
     {
       "id": 4,
@@ -223,6 +223,33 @@
       "taskName": "Sweep",
       "taskCreator": 7,
       "details": "First, you create a bleach solution and fill the mop bucket"
+    },
+    {
+      "id": 2,
+      "taskName": "Mop floors",
+      "taskCreator": 7,
+      "details": "1st thing we make a bleach solution. then we mop the floors"
+    },
+    {
+      "id": 3,
+      "taskName": "Mop floors and scrub cracks",
+      "taskCreator": 7,
+      "details": "1. make a solution with bleach."
+    },
+    {
+      "id": 4,
+      "taskName": "Mop Floors and scrub those floors",
+      "taskCreator": 7,
+      "details": "1. Make a solution with bleach, then use your mop to mop the floors."
+    },
+    {
+      "id": 5,
+      "taskName": "Cleaning Windoes",
+      "taskCreator": 8,
+      "details": "you need to clean windows"
+    },
+    {
+      "id": 6
     }
   ],
   "assignTask": [
@@ -254,21 +281,12 @@
       "id": 3
     },
     {
-      "taskId": 1,
-      "priorityId": 2,
-      "userId": 3,
-      "isCompleted": false,
-      "locationId": 4,
-      "date": "2019-08-07T05:00:00.000Z",
-      "id": 4
-    },
-    {
       "id": 5,
       "taskId": 1,
       "priorityId": 3,
       "locationId": 3,
       "userId": 6,
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "taskId": 1,
@@ -283,10 +301,176 @@
       "taskId": 1,
       "priorityId": 3,
       "userId": 3,
-      "isCompleted": false,
+      "isCompleted": "",
       "locationId": 3,
       "date": "2019-08-15T05:00:00.000Z",
       "id": 7
+    },
+    {
+      "taskId": 1,
+      "priorityId": 5,
+      "userId": 4,
+      "isCompleted": true,
+      "locationId": 4,
+      "date": "2019-08-15T05:00:00.000Z",
+      "id": 8
+    },
+    {
+      "id": 9,
+      "taskId": 2,
+      "priorityId": 5,
+      "locationId": 1,
+      "userId": 8,
+      "isCompleted": true
+    },
+    {
+      "id": 10,
+      "taskId": 4,
+      "priorityId": 3,
+      "locationId": 1,
+      "userId": 2,
+      "isCompleted": true
+    },
+    {
+      "taskId": 1,
+      "priorityId": 4,
+      "userId": 4,
+      "isCompleted": "",
+      "locationId": 3,
+      "date": "2019-11-21T06:00:00.000Z",
+      "id": 11
+    },
+    {
+      "taskId": 5,
+      "priorityId": 4,
+      "userId": 6,
+      "isCompleted": true,
+      "locationId": 2,
+      "date": "2019-11-14T06:00:00.000Z",
+      "id": 12
+    },
+    {
+      "taskId": 4,
+      "priorityId": 2,
+      "userId": 6,
+      "isCompleted": true,
+      "locationId": 4,
+      "date": "2019-11-14T06:00:00.000Z",
+      "id": 13
+    },
+    {
+      "id": 14,
+      "taskId": 4,
+      "priorityId": 5,
+      "locationId": 3,
+      "userId": 2,
+      "isCompleted": true
+    },
+    {
+      "id": 15,
+      "taskId": 3,
+      "priorityId": 5,
+      "locationId": 1,
+      "userId": 3,
+      "isCompleted": true
+    },
+    {
+      "id": 16,
+      "taskId": 4,
+      "priorityId": 5,
+      "locationId": 4,
+      "userId": 6,
+      "isCompleted": true
+    },
+    {
+      "id": 17,
+      "taskId": 4,
+      "priorityId": 3,
+      "locationId": 4,
+      "userId": 3,
+      "isCompleted": true
+    },
+    {
+      "id": 18,
+      "taskId": 4,
+      "priorityId": 3,
+      "locationId": 3,
+      "userId": 6,
+      "isCompleted": true
+    },
+    {
+      "taskId": 1,
+      "priorityId": 2,
+      "userId": 2,
+      "isCompleted": false,
+      "locationId": 5,
+      "date": "2019-11-12T06:00:00.000Z",
+      "id": 19
+    },
+    {
+      "id": 20,
+      "taskId": 4,
+      "priorityId": 5,
+      "locationId": 3,
+      "userId": 6,
+      "isCompleted": true
+    },
+    {
+      "id": 21,
+      "taskId": 4,
+      "priorityId": 4,
+      "locationId": 1,
+      "userId": 7,
+      "isCompleted": true
+    },
+    {
+      "id": 22,
+      "taskId": 3,
+      "priorityId": 4,
+      "locationId": 5,
+      "userId": 8,
+      "isCompleted": true
+    },
+    {
+      "id": 23,
+      "taskId": 4,
+      "priorityId": 3,
+      "locationId": 2,
+      "userId": 4,
+      "isCompleted": true
+    },
+    {
+      "id": 24,
+      "taskId": 4,
+      "priorityId": 5,
+      "locationId": 5,
+      "userId": 5,
+      "isCompleted": true
+    },
+    {
+      "id": 25,
+      "taskId": 4,
+      "priorityId": 5,
+      "locationId": 3,
+      "userId": 2,
+      "isCompleted": true
+    },
+    {
+      "id": 26,
+      "taskId": 4,
+      "priorityId": 3,
+      "locationId": 5,
+      "userId": 6,
+      "isCompleted": true
+    },
+    {
+      "taskId": 4,
+      "priorityId": 3,
+      "userId": 3,
+      "isCompleted": false,
+      "locationId": 4,
+      "date": "2019-11-12T06:00:00.000Z",
+      "id": 27
     }
   ],
   "taskTools": [
@@ -299,6 +483,41 @@
       "toolId": 1,
       "taskId": 1,
       "id": 2
+    },
+    {
+      "toolId": 1,
+      "taskId": 2,
+      "id": 3
+    },
+    {
+      "toolId": 2,
+      "taskId": 2,
+      "id": 4
+    },
+    {
+      "toolId": 1,
+      "taskId": 4,
+      "id": 5
+    },
+    {
+      "toolId": 2,
+      "taskId": 4,
+      "id": 6
+    },
+    {
+      "toolId": 3,
+      "taskId": 4,
+      "id": 7
+    },
+    {
+      "toolId": 4,
+      "taskId": 5,
+      "id": 8
+    },
+    {
+      "toolId": 5,
+      "taskId": 5,
+      "id": 9
     }
   ],
   "taskChemicals": [
@@ -306,6 +525,21 @@
       "chemicalId": 1,
       "taskId": 1,
       "id": 1
+    },
+    {
+      "chemicalId": 1,
+      "taskId": 2,
+      "id": 2
+    },
+    {
+      "chemicalId": 1,
+      "taskId": 4,
+      "id": 3
+    },
+    {
+      "chemicalId": 2,
+      "taskId": 5,
+      "id": 4
     }
   ]
 }

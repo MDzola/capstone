@@ -71,11 +71,11 @@ export default class ToolDetails extends Component {
                 <div className="card-title">
                   <Link className="nav-link" to={`/mytools/${this.props.match.params.toolId}/edit`}><h2>EDIT THIS TOOL</h2></Link>
                </div>
-               <div>
+               {/* <div>
                             <a href="#"
                             onClick={() => this.deleteTool(this.props.match.params.toolId)}
                             className="card-link">Delete</a>
-               </div>
+               </div> */}
             </section>
         )
     }
