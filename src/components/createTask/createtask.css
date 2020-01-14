@@ -50,3 +50,12 @@
 }
 
 
+.Guide {
+    text-align: center;
+
+}
+
+.btnCreate {
+   display: flex;
+   justify-content: center;
+}
