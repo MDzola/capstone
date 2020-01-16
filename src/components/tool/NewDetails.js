@@ -69,9 +69,6 @@ export default class ToolDetails extends Component {
                             onClick={() => this.state.resource}
                             className="card-title">RESOURCE</a>
                     </div>
-                    <div class="card-body">
-                    <Link className="nav-link" to={`/mytools/${this.props.match.params.toolId}/edit`}><h2>EDIT THIS TOOL</h2></Link>
-                    </div>
                </div>
             </section>
         )
