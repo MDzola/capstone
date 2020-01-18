@@ -6,9 +6,9 @@ import "../tool/tool.css"
 export default class ToolCardList extends Component {
     render() {
         return (
-                <div key={this.props.tool.id} className="card tool">
+                <div key={this.props.tool.id} className="card">
                     <div className="card-body">
-                    <h4 className="card-title">
+                    <h4 className="card-img-top text-center">
                             <img src={ this.props.tool.img } className="icon--toolList" alt="" />
                         </h4>
                         <div className="card-title">

@@ -102,7 +102,7 @@
       "resource": "",
       "inventory": "",
       "cost": 28.45,
-      "img": "http:www.image.com",
+      "img": "../image/simple_green.jpg",
       "sdsUrl": "http:www.image.com"
     },
     {
@@ -113,7 +113,7 @@
       "resource": "",
       "inventory": "",
       "cost": 28.45,
-      "img": "http:www.image.com",
+      "img": "../image/pinesol.png",
       "sdsUrl": "http:www.image.com"
     },
     {
@@ -124,7 +124,7 @@
       "resource": "",
       "inventory": "",
       "cost": 28.45,
-      "img": "http:www.image.com",
+      "img": "../image/urinal_cake.jpg",
       "sdsUrl": "http:www.image.com"
     }
   ],
@@ -167,7 +167,7 @@
       "resource": "",
       "inventory": "",
       "cost": 28.45,
-      "img": "http:www.image.com"
+      "img": "../image/squeegee-hd.png"
     },
     {
       "id": 5,
@@ -177,7 +177,7 @@
       "resource": "",
       "inventory": "",
       "cost": 28.45,
-      "img": "http:www.image.com"
+      "img": "../image/cotton-towels.png"
     },
     {
       "id": 6,
@@ -187,7 +187,7 @@
       "resource": "",
       "inventory": "",
       "cost": 28.45,
-      "img": "http:www.image.com"
+      "img": "../image/scrub_pads.jpg"
     }
   ],
   "locations": [
