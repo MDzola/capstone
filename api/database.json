@@ -97,11 +97,11 @@
     {
       "id": 3,
       "name": "Simple Green",
-      "type": "",
-      "description": "",
+      "type": "General Purpose Cleaner",
+      "description": "Eco Friendly Cleaner approved for food warehouse use",
       "resource": "",
-      "inventory": "",
-      "cost": 28.45,
+      "inventory": null,
+      "cost": 28,
       "img": "../image/simple_green.jpg",
       "sdsUrl": "http:www.image.com"
     },
@@ -145,7 +145,7 @@
       "type": "General Purpose Cleaning",
       "description": "Industrial Mop Bucket with Wringer",
       "resource": "https://www.uline.com/BL_7001/Wavebrake-Buckets-Wringers?keywords=mop+bucket+with+wringer",
-      "inventory": 5,
+      "inventory": 9,
       "cost": 81,
       "img": "../image/mopBucketWithWringer.png"
     },
@@ -162,11 +162,11 @@
     {
       "id": 4,
       "name": "squeegee",
-      "type": "",
-      "description": "",
+      "type": "Processing Room tool",
+      "description": "Tool to quickly push water or water waste over a smooth surface",
       "resource": "",
-      "inventory": "",
-      "cost": 28.45,
+      "inventory": null,
+      "cost": 28,
       "img": "../image/squeegee-hd.png"
     },
     {

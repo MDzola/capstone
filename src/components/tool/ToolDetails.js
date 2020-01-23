@@ -59,7 +59,7 @@ export default class ToolDetails extends Component {
                         <h5 class="card-title">{ this.state.name }</h5>
                         <p class="card-text">{this.state.description}</p>
                     </div>
-                    <ul class="list-grou[ list-group-flush">
+                    <ul class="list-group list-group-flush">
                     <li class="list-group-item">Type: {this.state.type}</li>
                     <li class="list-group-item">Inventory: {this.state.inventory} </li>
                     <li class="list-group-item">Cost: {this.state.cost}</li>
