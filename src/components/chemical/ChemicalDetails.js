@@ -46,23 +46,27 @@ export default class ChemicalDetails extends Component {
         return (
             <section className="chemical">
                 <div key={ this.props.match.params.chemicalId } className="card">
-                    <div className="card-body">
-                        <h4 className="card-title">
-                            <img src={ this.state.img } className="icon--chemical" alt="" />
-                        </h4>
-                        <h3 className="card-title">{ this.state.name }</h3>
-                        <h6 className="card-title">Type: {this.state.type}</h6>
-                        <h4 className="card-title">{this.state.description}</h4>
-                        <h4 className="card-title">Inventory: {this.state.inventory}</h4>
-                        <h6 className="card-title">Cost: {this.state.cost}</h6>
-                         <a href= {this.state.resource}
+                            <img class="card-img-top" src={ this.state.img } alt="Card img cap"></img>
+                         <div className="card-body">
+                             <h5 class="card-title">{ this.state.name }</h5>
+                                <p class="card-text">{this.state.description}</p>
+                         </div>
+                        <div>
+                            <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Type: {this.state.type}</li>
+                            <li class="list-group-item">Inventory: {this.state.inventory} </li>
+                            <li class="list-group-item">Cost: {this.state.cost}</li>
+                            </ul>
+                        </div>
+                        <div classs="card-body">
+                            <a href= {this.state.resource}
                             onClick={() => this.state.resource}
                             className="card-title">RESOURCE</a>
-                    </div>
+                        </div>
+                        <div class="card-body">
+                            <Link className="nav-link" to={`/myChemicals/${this.props.match.params.chemicalId}/edit`}><h2>EDIT THIS CHEMICAL</h2></Link>
+                        </div>
                 </div>
-                <div className="card-title">
-                  <Link className="nav-link" to={`/mytools/${this.props.match.params.chemicalId}/edit`}><h2>EDIT THIS CHEMICAL</h2></Link>
-               </div>
             </section>
         )
     }

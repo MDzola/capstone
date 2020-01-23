@@ -51,7 +51,7 @@ export default class ChemicalEdit extends Component {
       evt.preventDefault()
 
         const updateChemical = {
-          id: this.props.match.params.toolId,
+          id: this.props.match.params.chemicalId,
           name: this.state.name,
           type: this.state.type,
           description: this.state.description,
@@ -63,7 +63,7 @@ export default class ChemicalEdit extends Component {
 
         };
 
-    this.props.editTool(updateChemical)
+    this.props.editChemical(updateChemical)
     .then(() => this.props.history.push("/myChemicals"))
     }
 
